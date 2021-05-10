@@ -17,7 +17,6 @@ public class musicPlayerForm extends javax.swing.JFrame {
     static String songArtist = null;
     
     static boolean isStarted = false;
-    static boolean isLiked = false;
     static boolean isPlaying = true;
     static boolean isLooping = false;
     
@@ -307,12 +306,8 @@ public class musicPlayerForm extends javax.swing.JFrame {
         isLooping = !isLooping;
     }                                          
 
-    private void likeButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        if(!isLiked){
-            isLiked = true;
-        }else{
-            System.out.println("You already liked this song!");
-        }
+    private void restartButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        player.clip.setMicrosecondPosition(0);
     }                                          
 
     private void skipButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
