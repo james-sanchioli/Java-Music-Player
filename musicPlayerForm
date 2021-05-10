@@ -1,4 +1,4 @@
-package com.mycompany.finalProject;
+package finalProject;
 
 import javax.sound.sampled.Clip;
 import java.util.Random;
@@ -278,7 +278,8 @@ public class musicPlayerForm extends javax.swing.JFrame {
             playButton.setText("Stop");
         }else{
             isStarted = false;
-            songName.setText("Press Start to begin");
+            songName.setText("Press Start to Begin");
+            artistName.setText("Press Start to Begin");
             player.clip.stop();
             playButton.setText("Start");
         }
