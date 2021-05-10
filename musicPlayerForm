@@ -1,0 +1,375 @@
+package com.mycompany.musicplayertutorial;
+
+import javax.sound.sampled.Clip;
+import java.util.Random;
+
+public class musicPlayerForm extends javax.swing.JFrame {
+
+    
+    public musicPlayerForm() {
+        initComponents();
+        player.loadMusic(filepath);
+    }
+    static musicPlayer player = musicPlayer.getInstance();
+    static long clipTimePosition;
+    static String filepath = null;
+    static String songTitle = null;
+    static String songArtist = null;
+    
+    static boolean isStarted = false;
+    static boolean isLiked = false;
+    static boolean isPlaying = true;
+    static boolean isLooping = false;
+    
+    public static void shuffleMusic(){
+        Random rand = new Random();
+        int upperbound = 20;
+        int int_random = rand.nextInt(upperbound);
+        
+        int shuffleMusic = int_random;
+            switch(shuffleMusic){
+                case 0:
+                    filepath = "DoTheRoundabout_ABSRDST.wav";
+                    songTitle = "Do The Runaround";
+                    songArtist = "ABSRDST";
+                    break;
+                case 1:
+                    filepath = "Tr4HT4lk_PRBLMSFTfamilypet.wav";
+                    songTitle = "Tr4$H T4LK";
+                    songArtist = "PRBLEMS";
+                    break;
+                case 2:
+                    filepath = "Numb_AubreyJoseph.wav";
+                    songTitle = "Numb";
+                    songArtist = "Aubrey Joseph";
+                    break;
+                case 3:
+                    filepath = "SlowDecay_Ingrid Witt.wav";
+                    songTitle = "Slow Decay";
+                    songArtist = "Ingrid Witt";
+                    break;
+                case 4:
+                    filepath = "AkasakaSad_RinaSawayama.wav";
+                    songTitle = "Akasaka Sad";
+                    songArtist = "Rina Sawayama";
+                    break;
+                case 5:
+                    filepath = "CHLORINE_XYLO.wav";
+                    songTitle = "CHLORINE";
+                    songArtist = "XYLO";
+                    break;
+                case 6:
+                    filepath = "Them_FLAVIA.wav";
+                    songTitle = "Them";
+                    songArtist = "FLAVIA";
+                    break;
+                case 7:
+                    filepath = "IGotYou_Maddie Jay.wav";
+                    songTitle = "I Got You";
+                    songArtist = "Maddie Jay";
+                    break;
+                case 8:
+                    filepath = "sushiforbreakfast_BAYLI.wav";
+                    songTitle = "sushi for breakfast";
+                    songArtist = "BAYLI";
+                    break;
+                case 9:
+                    filepath = "Brat_Amadelle.wav";
+                    songTitle = "Brat";
+                    songArtist = "Amadelle";
+                    break;
+                case 10:
+                    filepath = "TurnOffTheLight_KimPetrasFTElvir,MistressoftheDark.wav";
+                    songTitle = "Turn Off The Light";
+                    songArtist = "Kim Petras ft. Elvira, Mistress of the Dark";
+                    break;
+                case 11:
+                    filepath = "ShutUpandCry_Zolita.wav";
+                    songTitle = "Shut Up and Cry";
+                    songArtist = "Zolita";
+                    break;
+                case 12:
+                    filepath = "DoUKnowHowtoHaveFeelings_PHIAZ.wav";
+                    songTitle = "Do U Know How to Have Feelings";
+                    songArtist = "PHIA Z";
+                    break;
+                case 13:
+                    filepath = "Toxic_BritneySpears.wav";
+                    songTitle = "Toxic";
+                    songArtist = "Britney Spears";
+                    break;
+                case 14:
+                    filepath = "Judas_LadyGaga.wav";
+                    songTitle = "Judas";
+                    songArtist = "Lady Gaga";
+                    break;
+                case 15:
+                    filepath = "Chemicals_TheGlitchMob.wav";
+                    songTitle = "Chemicals";
+                    songArtist = "Glitch Mob";
+                    break;
+                case 16:
+                    filepath = "Gangsta_Kehlani.wav";
+                    songTitle = "Gangsta";
+                    songArtist = "Kehlani";
+                    break;
+                case 17:
+                    filepath = "QUEENOFTHEFREAKS_AViVA.wav";
+                    songTitle = "Queen of the Freaks";
+                    songArtist = "AViVA";
+                    break;
+                case 18:
+                    filepath = "YourLove(DéjàVu)_GlassAnimals.wav";
+                    songTitle = "Your Love (Deja Vu)";
+                    songArtist = "Glass Animals";
+                    break;
+                case 19:
+                    filepath = "Brain,Brain,GoAway_UnlikePluto.wav";
+                    songTitle = "Brain, Brain, Go Away";
+                    songArtist = "Unlike Pluto";
+                    break;
+            }
+}
+    
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        playButton = new javax.swing.JButton();
+        pauseButton = new javax.swing.JButton();
+        loopButton = new javax.swing.JButton();
+        likeButton = new javax.swing.JButton();
+        skipButton = new javax.swing.JButton();
+        songName = new javax.swing.JLabel();
+        artistNameStatic = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        artistName = new javax.swing.JLabel();
+
+        jToggleButton1.setText("jToggleButton1");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Song Name:");
+
+        playButton.setText("Start");
+        playButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playButtonActionPerformed(evt);
+            }
+        });
+
+        pauseButton.setText("Pause");
+        pauseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pauseButtonActionPerformed(evt);
+            }
+        });
+
+        loopButton.setText("Loop");
+        loopButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loopButtonActionPerformed(evt);
+            }
+        });
+
+        likeButton.setText("Like");
+        likeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                likeButtonActionPerformed(evt);
+            }
+        });
+
+        skipButton.setText("Skip");
+        skipButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                skipButtonActionPerformed(evt);
+            }
+        });
+
+        songName.setText("Press Start to Begin");
+
+        artistNameStatic.setText("Artist Name:");
+
+        artistName.setText("Press Start to Begin");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(87, Short.MAX_VALUE)
+                        .addComponent(playButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(pauseButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(loopButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(likeButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(skipButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(artistNameStatic))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(artistName)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3))
+                            .addComponent(songName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(73, 73, 73))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(songName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(artistNameStatic)
+                    .addComponent(jLabel3)
+                    .addComponent(artistName))
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(playButton)
+                    .addComponent(pauseButton)
+                    .addComponent(loopButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(likeButton)
+                    .addComponent(skipButton))
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        if(!isStarted){
+            isStarted = true;
+            shuffleMusic();
+            songName.setText(songTitle);
+            artistName.setText(songArtist);
+            player.loadMusic(filepath);
+            player.clip.setMicrosecondPosition(0);
+            clipTimePosition = 0;
+            player.clip.start();
+            playButton.setText("Stop");
+        }else{
+            isStarted = false;
+            songName.setText("Press Start to begin");
+            player.clip.stop();
+            playButton.setText("Start");
+        }
+    }                                          
+
+    private void pauseButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        if(isPlaying){
+            clipTimePosition = player.clip.getMicrosecondPosition();
+            player.clip.stop();
+            pauseButton.setText("Resume");
+        }else{
+            player.clip.setMicrosecondPosition(clipTimePosition);
+            player.clip.start();
+            pauseButton.setText("Pause");
+        }
+        isPlaying = !isPlaying;
+    }                                           
+
+    private void loopButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        if(!isLooping){
+            player.clip.loop(Clip.LOOP_CONTINUOUSLY);
+        }else{
+            player.clip.loop(0);
+        }
+        isLooping = !isLooping;
+    }                                          
+
+    private void likeButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        if(!isLiked){
+            isLiked = true;
+        }else{
+            System.out.println("You already liked this song!");
+        }
+    }                                          
+
+    private void skipButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        player.clip.stop();
+        shuffleMusic();
+        songName.setText(songTitle);
+        artistName.setText(songArtist);
+        player.loadMusic(filepath);
+        player.clip.setMicrosecondPosition(0);
+        clipTimePosition = 0;
+        player.clip.start();
+    }                                          
+
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(musicPlayerForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(musicPlayerForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(musicPlayerForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(musicPlayerForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new musicPlayerForm().setVisible(true);
+            }
+        });
+    }
+
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JLabel artistName;
+    private javax.swing.JLabel artistNameStatic;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JButton likeButton;
+    private javax.swing.JButton loopButton;
+    private javax.swing.JButton pauseButton;
+    private javax.swing.JButton playButton;
+    private javax.swing.JButton skipButton;
+    private javax.swing.JLabel songName;
+    // End of variables declaration                   
+}
