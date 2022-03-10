@@ -1,4 +1,4 @@
-# Java-Music-Player
+# java-music-player
 
 ### Objective
 
